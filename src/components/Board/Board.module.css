@@ -1,0 +1,74 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #454545;
+    padding-top: 30px;
+}
+
+.board:nth-child(1) {
+    border-right: 1px solid #454545;
+}
+
+.board h3 {
+    font-size: 32px;
+    line-height: calc(39 / 32);
+    color: #ef9919;
+    margin-bottom: 20px;
+}
+
+h3.winningColor {
+    color: #00AE1C;
+}
+
+h3.losingColor {
+    color: #FF5620;
+}
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #313131;
+    border: 1px solid #454545;
+    margin-bottom: 30px;
+}
+
+.square button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    border: none;
+    cursor: pointer;
+    background-color: #313131;
+    will-change: box-shadow, transition;
+}
+
+.square button:nth-child(2),
+.square button:nth-child(8) {
+    border-right: 1px solid #7d7d7d;
+    border-left: 1px solid #7d7d7d;
+}
+
+.square button:nth-child(5) {
+    border: 1px solid #7d7d7d;
+}
+
+.square button:nth-child(4),
+.square button:nth-child(6) {
+    border-bottom: 1px solid #7d7d7d;
+    border-top: 1px solid #7d7d7d;
+}
+
+.square button:hover {
+    box-shadow: inset 0 0 6px 1px #000;
+    transition: box-shadow .15s ease;
+}

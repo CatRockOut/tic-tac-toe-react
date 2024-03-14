@@ -1,0 +1,63 @@
+.cross,
+.circle {
+    position: relative;
+}
+
+.cross::after,
+.cross::before {
+    content: '';
+    position: absolute;
+    width: 83px;
+    height: 16px;
+    background-color: #EF9919;
+    border-radius: 10px;
+    transform: translate(50%, 50%);
+}
+
+.cross:before {
+    transform: rotate(45deg);
+}
+
+.cross:after {
+    transform: rotate(-45deg);
+}
+
+.circle::before {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border: 19px solid #EF9919;
+}
+
+.horizontalLine,
+.verticalLine,
+.diagonalLineLeft,
+.diagonalLineRight {
+    position: absolute;
+    z-index: 5;
+    border: 3px solid #fff;
+    border-radius: 10px;
+}
+
+.horizontalLine {
+    width: 105%;
+    transform: rotate(360deg);
+}
+
+.verticalLine {
+    width: 105%;
+    transform: rotate(270deg);
+}
+
+.diagonalLineLeft {
+    width: 145%;
+    transform: rotate(45deg);
+}
+
+.diagonalLineRight {
+    width: 145%;
+    transform: rotate(-45deg);
+}

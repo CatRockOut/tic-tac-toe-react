@@ -15,7 +15,7 @@ function Score({ player }) {
         if (winner !== null) {
             dispatch(winCounter(winner));
         }
-    }, [winner]);
+    }, [winner, dispatch]);
 
     // Game 'Reset' button in the header:
     const resetGameButton = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Square.module.css';
 import { useSelector } from 'react-redux';
 
-function Square({ value, index, onClick }) {
+function Square({ value, index, handleSquareClick }) {
     const winnerLine = useSelector((state) => state.game.winnerLine);
     const isWinningSquare = winnerLine && winnerLine.includes(index);
 
@@ -54,7 +54,7 @@ function Square({ value, index, onClick }) {
     };
 
     return (
-        <button className={`${value ? styles[value] : ''}`} onClick={onClick}>
+        <button className={`${value ? styles[value] : ''}`} onClick={handleSquareClick}>
             {isWinningSquare && (
                 <div className={`${getWinningLineStyle()}`}></div>
             )}

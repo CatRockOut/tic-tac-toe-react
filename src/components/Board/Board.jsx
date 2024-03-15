@@ -11,12 +11,9 @@ import {
 } from '../../store/reducers/gameSlice';
 
 function Board({ player }) {
-    const squares = useSelector((state) => state.game.squares);
-    const gameOver = useSelector((state) => state.game.gameOver);
-    const gameStarted = useSelector((state) => state.game.gameStarted);
-    const currentPlayer = useSelector((state) => state.game.currentPlayer);
-    const winner = useSelector((state) => state.game.winner);
-    const draw = useSelector((state) => state.game.draw);
+    const { squares, gameOver, gameStarted, currentPlayer, winner, draw } = useSelector(
+        (state) => state.game
+    );
     const dispatch = useDispatch();
 
     // Set the "gameStarted: true" when loading the component to display the text 'Game started!':
@@ -96,7 +93,7 @@ function Board({ player }) {
                         key={index}
                         index={index}
                         value={square.value}
-                        onClick={() => handleClick(player, index)}
+                        handleSquareClick={() => handleClick(player, index)}
                     />
                 ))}
             </div>
